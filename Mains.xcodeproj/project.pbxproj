@@ -6,14 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4C16E2F22FE09259006E8CB8 /* MainsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16E2F32FE09259006E8CB8 /* MainsApp.swift */; };
+		4C16E2F42FE09259006E8CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C16E2F52FE09259006E8CB8 /* Assets.xcassets */; };
+		4C16E2FA2FE0A001006E8CB8 /* power-status-changed.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4C16E2F92FE0A001006E8CB8 /* power-status-changed.sh */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		4C16E29B2FE08BA7006E8CB8 /* Power Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Power Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C16E29B2FE08BA7006E8CB8 /* Mains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mains.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C16E2F32FE09259006E8CB8 /* MainsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainsApp.swift; sourceTree = "<group>"; };
+		4C16E2F52FE09259006E8CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C16E2F92FE0A001006E8CB8 /* power-status-changed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "power-status-changed.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4C16E29D2FE08BA7006E8CB8 /* Power Notifier */ = {
+		4C16E29D2FE08BA7006E8CB8 /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Power Notifier";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C16E2F62FE09259006E8CB8 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C16E2F72FE09259006E8CB8 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,15 +51,28 @@
 		4C16E2922FE08BA7006E8CB8 = {
 			isa = PBXGroup;
 			children = (
-				4C16E29D2FE08BA7006E8CB8 /* Power Notifier */,
+				4C16E2F32FE09259006E8CB8 /* MainsApp.swift */,
+				4C16E29D2FE08BA7006E8CB8 /* Models */,
+				4C16E2F62FE09259006E8CB8 /* Services */,
+				4C16E2F72FE09259006E8CB8 /* Views */,
+				4C16E2F82FE0A001006E8CB8 /* Resources */,
+				4C16E2F52FE09259006E8CB8 /* Assets.xcassets */,
 				4C16E29C2FE08BA7006E8CB8 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		4C16E2F82FE0A001006E8CB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C16E2F92FE0A001006E8CB8 /* power-status-changed.sh */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4C16E29C2FE08BA7006E8CB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C16E29B2FE08BA7006E8CB8 /* Power Notifier.app */,
+				4C16E29B2FE08BA7006E8CB8 /* Mains.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +80,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C16E29A2FE08BA7006E8CB8 /* Power Notifier */ = {
+		4C16E29A2FE08BA7006E8CB8 /* Mains */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C16E2A62FE08BAA006E8CB8 /* Build configuration list for PBXNativeTarget "Power Notifier" */;
+			buildConfigurationList = 4C16E2A62FE08BAA006E8CB8 /* Build configuration list for PBXNativeTarget "Mains" */;
 			buildPhases = (
 				4C16E2972FE08BA7006E8CB8 /* Sources */,
 				4C16E2982FE08BA7006E8CB8 /* Frameworks */,
@@ -61,13 +93,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4C16E29D2FE08BA7006E8CB8 /* Power Notifier */,
+				4C16E29D2FE08BA7006E8CB8 /* Models */,
+				4C16E2F62FE09259006E8CB8 /* Services */,
+				4C16E2F72FE09259006E8CB8 /* Views */,
 			);
-			name = "Power Notifier";
+			name = Mains;
 			packageProductDependencies = (
 			);
-			productName = "Power Notifier";
-			productReference = 4C16E29B2FE08BA7006E8CB8 /* Power Notifier.app */;
+			productName = Mains;
+			productReference = 4C16E29B2FE08BA7006E8CB8 /* Mains.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4C16E2962FE08BA7006E8CB8 /* Build configuration list for PBXProject "Power Notifier" */;
+			buildConfigurationList = 4C16E2962FE08BA7006E8CB8 /* Build configuration list for PBXProject "Mains" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C16E29A2FE08BA7006E8CB8 /* Power Notifier */,
+				4C16E29A2FE08BA7006E8CB8 /* Mains */,
 			);
 		};
 /* End PBXProject section */
@@ -109,6 +143,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C16E2F42FE09259006E8CB8 /* Assets.xcassets in Resources */,
+				4C16E2FA2FE0A001006E8CB8 /* power-status-changed.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C16E2F22FE09259006E8CB8 /* MainsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,17 +291,18 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.irradiated.Power-Notifier";
+				PRODUCT_BUNDLE_IDENTIFIER = net.irradiated.Mains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
+				REGISTER_APP_GROUPS = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -285,17 +323,18 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
+				ENABLE_USER_SELECTED_FILES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.irradiated.Power-Notifier";
+				PRODUCT_BUNDLE_IDENTIFIER = net.irradiated.Mains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
+				REGISTER_APP_GROUPS = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -308,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C16E2962FE08BA7006E8CB8 /* Build configuration list for PBXProject "Power Notifier" */ = {
+		4C16E2962FE08BA7006E8CB8 /* Build configuration list for PBXProject "Mains" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C16E2A42FE08BAA006E8CB8 /* Debug */,
@@ -317,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C16E2A62FE08BAA006E8CB8 /* Build configuration list for PBXNativeTarget "Power Notifier" */ = {
+		4C16E2A62FE08BAA006E8CB8 /* Build configuration list for PBXNativeTarget "Mains" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C16E2A72FE08BAA006E8CB8 /* Debug */,
