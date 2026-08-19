@@ -43,6 +43,10 @@ struct ScriptInstructionsView: View {
             .foregroundStyle(.secondary)
             .fixedSize(horizontal: false, vertical: true)
 
+            Text("To diagnose issues, open Console and filter for `net.irradiated.Mains`.")
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
             HStack {
                 Spacer()
                 Button("Done", action: close)

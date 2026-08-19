@@ -1,6 +1,9 @@
 import AppKit
 import Observation
+import OSLog
 import ServiceManagement
+
+private let logger = Logger(subsystem: "net.irradiated.Mains", category: "AppModel")
 
 @MainActor
 @Observable
@@ -79,6 +82,10 @@ final class AppModel {
             }
         } catch {
             settingsErrorMessage = error.localizedDescription
+            let targetState = enabled ? "enabled" : "disabled"
+            logger.error(
+                "Failed to set launch at login to \(targetState, privacy: .public): \(error.localizedDescription, privacy: .public)"
+            )
         }
 
         refreshLoginItemStatus()
@@ -98,7 +105,12 @@ final class AppModel {
         powerState = newState
         refreshScriptStatus()
 
-        guard isScriptReady else { return }
+        guard isScriptReady else {
+            logger.warning(
+                "No executable script at \(self.scriptManager.scriptPath, privacy: .public) for power state \(newState.rawValue, privacy: .public)"
+            )
+            return
+        }
 
         scriptErrorMessage = nil
         let previousTask = scriptExecutionTask

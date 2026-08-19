@@ -1,5 +1,8 @@
 import AppKit
 import Foundation
+import OSLog
+
+private let logger = Logger(subsystem: "net.irradiated.Mains", category: "ScriptManager")
 
 @MainActor
 final class ScriptManager {
@@ -37,17 +40,37 @@ final class ScriptManager {
     }
 
     func execute(with state: PowerState) async throws {
-        guard let scriptURL, isScriptReady else {
+        guard let scriptURL else {
+            logger.error(
+                "Missing script at \(self.expectedScriptPath, privacy: .public) for power state \(state.rawValue, privacy: .public)"
+            )
+            throw CocoaError(.fileNoSuchFile)
+        }
+
+        let scriptPath = abbreviatedPath(for: scriptURL)
+        guard isScriptReady else {
+            logger.error(
+                "Script at \(scriptPath, privacy: .public) is not ready for power state \(state.rawValue, privacy: .public)"
+            )
             throw CocoaError(.fileNoSuchFile)
         }
 
         let task = try NSUserUnixTask(url: scriptURL)
+        logger.info(
+            "Executing script at \(scriptPath, privacy: .public) for power state \(state.rawValue, privacy: .public)"
+        )
 
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             task.execute(withArguments: [state.rawValue]) { error in
                 if let error {
+                    logger.error(
+                        "Script at \(scriptPath, privacy: .public) failed for power state \(state.rawValue, privacy: .public): \(error.localizedDescription, privacy: .public)"
+                    )
                     continuation.resume(throwing: error)
                 } else {
+                    logger.info(
+                        "Script at \(scriptPath, privacy: .public) completed for power state \(state.rawValue, privacy: .public)"
+                    )
                     continuation.resume()
                 }
             }
@@ -90,6 +113,14 @@ final class ScriptManager {
 
     private func shellQuote(_ value: String) -> String {
         "'\(value.replacingOccurrences(of: "'", with: "'\\''"))'"
+    }
+
+    private func abbreviatedPath(for url: URL) -> String {
+        let path = url.path(percentEncoded: false)
+        let homePath = fileManager.homeDirectoryForCurrentUser.path(percentEncoded: false)
+        guard path == homePath || path.hasPrefix("\(homePath)/") else { return path }
+
+        return "~\(path.dropFirst(homePath.count))"
     }
 
     private func applicationScriptsDirectory(create: Bool) throws -> URL {
