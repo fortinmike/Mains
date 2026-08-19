@@ -17,7 +17,7 @@ final class ScriptManager {
     var creationCommand: String {
         let quotedPath = #""$HOME/Library/Application Scripts/\#(bundleIdentifier)/\#(Self.fileName)""#
         let quotedDirectory = #""$HOME/Library/Application Scripts/\#(bundleIdentifier)""#
-        let quotedTemplatePath = shellQuote(templateURL.path(percentEncoded: false))
+        let quotedTemplatePath = shellPath(templateURL.path(percentEncoded: false))
 
         return #"mkdir -p \#(quotedDirectory) && cp \#(quotedTemplatePath) \#(quotedPath) && chmod +x \#(quotedPath) && "${EDITOR:-nano}" \#(quotedPath)"#
     }
@@ -113,6 +113,16 @@ final class ScriptManager {
 
     private func shellQuote(_ value: String) -> String {
         "'\(value.replacingOccurrences(of: "'", with: "'\\''"))'"
+    }
+
+    private func shellPath(_ path: String) -> String {
+        let homePath = fileManager.homeDirectoryForCurrentUser.path(percentEncoded: false)
+        guard path.hasPrefix("\(homePath)/") else { return shellQuote(path) }
+
+        let relativePath = "~\(path.dropFirst(homePath.count))"
+        guard !relativePath.contains(" ") else { return shellQuote(path) }
+
+        return relativePath
     }
 
     private func abbreviatedPath(for url: URL) -> String {
