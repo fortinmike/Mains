@@ -22,6 +22,7 @@
 		4CE219A23036469E00D19A8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CE219BA30364C0400D19A8A /* menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bar.png"; sourceTree = "<group>"; };
 		4CE219BB30364C0400D19A8A /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
+		4CE219BC3036564100D19A8A /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -66,6 +67,7 @@
 				4CE219A23036469E00D19A8A /* README.md */,
 				4CE219BA30364C0400D19A8A /* menu-bar.png */,
 				4CE219BB30364C0400D19A8A /* setup.png */,
+				4CE219BD3036564100D19A8A /* Config */,
 				4C16E29C2FE08BA7006E8CB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +86,14 @@
 				4C16E2F92FE0A001006E8CB8 /* power-status-changed.sh */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4CE219BD3036564100D19A8A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4CE219BC3036564100D19A8A /* Signing.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +184,7 @@
 /* Begin XCBuildConfiguration section */
 		4C16E2A42FE08BAA006E8CB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE219BC3036564100D19A8A /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -237,6 +248,7 @@
 		};
 		4C16E2A52FE08BAA006E8CB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE219BC3036564100D19A8A /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -292,11 +304,11 @@
 		};
 		4C16E2A72FE08BAA006E8CB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE219BC3036564100D19A8A /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -325,11 +337,11 @@
 		};
 		4C16E2A82FE08BAA006E8CB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE219BC3036564100D19A8A /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;

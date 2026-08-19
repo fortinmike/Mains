@@ -7,3 +7,6 @@ xcuserdata/
 
 # Local Codex state
 .codex/
+
+# Local signing
+Config/Signing.local.xcconfig
