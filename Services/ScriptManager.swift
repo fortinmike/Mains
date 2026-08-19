@@ -19,7 +19,7 @@ final class ScriptManager {
         let quotedDirectory = #""$HOME/Library/Application Scripts/\#(bundleIdentifier)""#
         let quotedTemplatePath = shellQuote(templateURL.path(percentEncoded: false))
 
-        return #"mkdir -p \#(quotedDirectory) && cp \#(quotedTemplatePath) \#(quotedPath) && chmod +x \#(quotedPath) && "${EDITOR:-vi}" \#(quotedPath)"#
+        return #"mkdir -p \#(quotedDirectory) && cp \#(quotedTemplatePath) \#(quotedPath) && chmod +x \#(quotedPath) && "${EDITOR:-nano}" \#(quotedPath)"#
     }
 
     var isScriptReady: Bool {
