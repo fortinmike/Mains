@@ -20,8 +20,8 @@
 		4C16E2F92FE0A001006E8CB8 /* power-status-changed.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "power-status-changed.sh"; sourceTree = "<group>"; };
 		4C16E48E2FE17FBC006E8CB8 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		4CE219A23036469E00D19A8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4CE219A43036474300D19A8A /* menu-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-item.png"; sourceTree = "<group>"; };
-		4CE219A53036474300D19A8A /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
+		4CE219BA30364C0400D19A8A /* menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bar.png"; sourceTree = "<group>"; };
+		4CE219BB30364C0400D19A8A /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -64,8 +64,8 @@
 				4C16E2F52FE09259006E8CB8 /* Assets.xcassets */,
 				4C16E48E2FE17FBC006E8CB8 /* AppIcon.icon */,
 				4CE219A23036469E00D19A8A /* README.md */,
-				4CE219A43036474300D19A8A /* menu-item.png */,
-				4CE219A53036474300D19A8A /* setup.png */,
+				4CE219BA30364C0400D19A8A /* menu-bar.png */,
+				4CE219BB30364C0400D19A8A /* setup.png */,
 				4C16E29C2FE08BA7006E8CB8 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -117,12 +117,21 @@ final class ScriptManager {
 
     private func shellPath(_ path: String) -> String {
         let homePath = fileManager.homeDirectoryForCurrentUser.path(percentEncoded: false)
-        guard path.hasPrefix("\(homePath)/") else { return shellQuote(path) }
+        guard path == homePath || path.hasPrefix("\(homePath)/") else {
+            return shellQuote(path)
+        }
 
-        let relativePath = "~\(path.dropFirst(homePath.count))"
-        guard !relativePath.contains(" ") else { return shellQuote(path) }
+        return "$HOME\(shellEscape(String(path.dropFirst(homePath.count))))"
+    }
 
-        return relativePath
+    private func shellEscape(_ value: String) -> String {
+        value.reduce(into: "") { result, character in
+            if character.isLetter || character.isNumber || "/._-~".contains(character) {
+                result.append(character)
+            } else {
+                result.append("\\\(character)")
+            }
+        }
     }
 
     private func abbreviatedPath(for url: URL) -> String {

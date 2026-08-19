@@ -4,7 +4,7 @@ Mains is a simple macOS menu bar app that runs a user script when the Mac's powe
 
 ## Screenshots
 
-![Mains menu item](menu-item.png)
+![Mains menu item](menu-bar.png)
 
 ![Mains setup window](setup.png)
 
