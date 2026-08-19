@@ -1,6 +1,6 @@
 # Mains
 
-Mains is a simple macOS menu bar app that runs a user script when the Mac's power source changes. This enables getting remote push notifications through a service like Pushover among other use cases.
+Mains is a simple macOS menu bar app that runs a user script when the Mac's power source changes. This enables getting remote push notifications through a service like Pushover among other use cases. Useful for servers and other headless Macs.
 
 ## Screenshots
 
